@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxmynyx1idcvr"]
+
+[ext_resource type="PackedScene" uid="uid://bqvtbfly7kl7l" path="res://Scenes/Drill.tscn" id="1_5cjrv"]
+
+[sub_resource type="TileSet" id="TileSet_5cjrv"]
+
+[node name="World" type="Node2D"]
+
+[node name="MiningArea" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_5cjrv")
+format = 2
+
+[node name="Drill" parent="." instance=ExtResource("1_5cjrv")]
+position = Vector2(137, 121)
