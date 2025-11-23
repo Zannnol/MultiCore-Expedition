@@ -1,16 +1,18 @@
-# 2. Configuration Spécifique à l'Utilisateur et à l'Exportation
-# Ces fichiers contiennent des chemins locaux ou des clés d'exportation sensibles.
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Sensible exports
 export.cfg
 export_credentials.cfg
 *.user
 
-# 3. Ignorances Mono/C# (Si vous utilisez le C# à un moment donné)
+# Mono/C#
 .mono/
 data_*/
 mono_crash.*.json
 
-# 4. Fichiers d'Exportation et de Build (Les versions packagées du jeu)
-# Ces fichiers sont des sorties et ne doivent pas être versionnés.
+# Build exports
 *.zip
 *.pck
 *.apk
@@ -18,10 +20,7 @@ mono_crash.*.json
 *.app
 *.rar
 
-# 5. Fichiers Binaires et d'Art Lourd (À ignorer par défaut)
-# Utile si vous n'utilisez PAS Git LFS pour les Assets lourds (textures, sons).
-# Si vous utilisez Git LFS, vous pouvez retirer ces lignes.
-# Pour le Pixel Art 32x32, ils ne sont généralement pas trop gros, mais à titre préventif :
-# *.psd
-# *.xcf
-# *.blend
+# Big art files
+*.psd
+*.xcf
+*.blend
