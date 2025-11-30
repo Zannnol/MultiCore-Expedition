@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://7x52iwnht0vu"]
+[gd_scene load_steps=5 format=3 uid="uid://7x52iwnht0vu"]
 
 [ext_resource type="Script" uid="uid://ci050q58ymldv" path="res://Scripts/HUD.gd" id="1_sd512"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sd512"]
+radius = 45.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jo1ms"]
+radius = 45.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_psnte"]
+radius = 45.0
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -14,6 +23,9 @@ offset_bottom = 40.0
 
 [node name="FuelBar" type="TextureProgressBar" parent="Gauges"]
 layout_mode = 2
+value = 50.0
+tint_over = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
+tint_progress = Color(0.85592246, 0.44960082, 3.85046e-07, 1)
 
 [node name="HealthBar" type="TextureProgressBar" parent="Gauges"]
 layout_mode = 2
@@ -30,12 +42,15 @@ offset_bottom = 941.0
 
 [node name="LeftButton" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(97, 155)
+shape = SubResource("CircleShape2D_sd512")
 action = "ui_left"
 
 [node name="RightButton" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(223, 155)
+shape = SubResource("CircleShape2D_jo1ms")
 action = "ui_right"
 
 [node name="FlightButton" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(156, 103)
+position = Vector2(159, 69)
+shape = SubResource("CircleShape2D_psnte")
 action = "ui_up"
