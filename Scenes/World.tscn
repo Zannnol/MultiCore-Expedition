@@ -1,14 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxmynyx1idcvr"]
+[gd_scene load_steps=6 format=3 uid="uid://bxmynyx1idcvr"]
 
 [ext_resource type="PackedScene" uid="uid://bqvtbfly7kl7l" path="res://Scenes/Drill.tscn" id="1_5cjrv"]
+[ext_resource type="Texture2D" uid="uid://kl78hgfk1aou" path="res://Assets/Textures/ph_dirt.png" id="1_j0p05"]
+[ext_resource type="PackedScene" uid="uid://7x52iwnht0vu" path="res://Scenes/HUD.tscn" id="3_5nsto"]
 
-[sub_resource type="TileSet" id="TileSet_5cjrv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5nsto"]
+texture = ExtResource("1_j0p05")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gjpho"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_5nsto")
 
 [node name="World" type="Node2D"]
 
 [node name="MiningArea" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_5cjrv")
+tile_set = SubResource("TileSet_gjpho")
 format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, 131075, 1, 0, 131074, 1, 0, 131073, 1, 0, 131072, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 65546, 1, 0, 65545, 1, 0, 65544, 1, 0, 65543, 1, 0, 65542, 1, 0, 65541, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0)
 
 [node name="Drill" parent="." instance=ExtResource("1_5cjrv")]
-position = Vector2(137, 121)
+position = Vector2(42, -34)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("3_5nsto")]

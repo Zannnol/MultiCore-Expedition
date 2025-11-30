@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://7x52iwnht0vu"]
+
+[ext_resource type="Script" uid="uid://ci050q58ymldv" path="res://Scripts/HUD.gd" id="1_sd512"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sd512")
+
+[node name="Gauges" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 40.0
+
+[node name="FuelBar" type="TextureProgressBar" parent="Gauges"]
+layout_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="Gauges"]
+layout_mode = 2
+
+[node name="HeatBar" type="TextureProgressBar" parent="Gauges"]
+layout_mode = 2
+
+[node name="TouchControls" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 237.0
+offset_top = 651.0
+offset_right = 527.0
+offset_bottom = 941.0
+
+[node name="LeftButton" type="TouchScreenButton" parent="TouchControls"]
+position = Vector2(97, 155)
+action = "ui_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="TouchControls"]
+position = Vector2(223, 155)
+action = "ui_right"
+
+[node name="FlightButton" type="TouchScreenButton" parent="TouchControls"]
+position = Vector2(156, 103)
+action = "ui_up"
